@@ -1,0 +1,45 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "Stores user profile information and preferences.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Firebase Auth UID" },
+        "displayName": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "photoURL": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email"]
+    },
+    "Kundali": {
+      "title": "Birth Chart",
+      "description": "Stores birth details and generated chart data.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Owner's UID" },
+        "name": { "type": "string", "description": "Name of the person" },
+        "birthDate": { "type": "string", "format": "date", "description": "YYYY-MM-DD" },
+        "birthTime": { "type": "string", "description": "HH:mm" },
+        "birthPlace": { "type": "string" },
+        "latitude": { "type": "number" },
+        "longitude": { "type": "number" },
+        "timezone": { "type": "string" },
+        "chartData": { "type": "object", "description": "Calculated planetary positions and houses" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "name", "birthDate", "birthTime", "birthPlace"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "User",
+      "description": "User profile documents"
+    },
+    "kundalis/{kundaliId}": {
+      "schema": "Kundali",
+      "description": "Saved birth charts"
+    }
+  }
+}

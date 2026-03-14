@@ -1,0 +1,5 @@
+{
+  "name": "Vedic Kundali Pro - Accurate Nepali Astrology",
+  "description": "A professional-grade Vedic Astrology application providing accurate Kundali (Birth Charts), Navamsha, Moon Charts, Vimshottari Dasha, Rajyoga analysis, and detailed AI-powered interpretations in Nepali.",
+  "requestFramePermissions": ["geolocation"]
+}
